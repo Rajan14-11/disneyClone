@@ -10,24 +10,32 @@ function ImageSlider() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoPlay: false,
-    speed: 5000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+    autoplay: true,
   };
   return (
     <Container {...settings}>
       <Wrap>
-        <img src="/images/slider-badag.jpg" />
+        <a>
+          <img src="/images/slider-badging.jpg" alt="" />
+        </a>
       </Wrap>
+
       <Wrap>
-        <img src="/images/slider-badging.jpg" />
+        <a>
+          <img src="/images/slider-scale.jpg" alt="" />
+        </a>
       </Wrap>
+
       <Wrap>
-        <img src="/images/slider-scale.jpg" />
+        <a>
+          <img src="/images/slider-badag.jpg" alt="" />
+        </a>
       </Wrap>
+
       <Wrap>
-        <img src="/images/slider-scales.jpg" />
+        <a>
+          <img src="/images/slider-scales.jpg" alt="" />
+        </a>
       </Wrap>
     </Container>
   );
@@ -36,19 +44,58 @@ function ImageSlider() {
 export default ImageSlider;
 
 const Container = styled(Slider)`
-  width: 100vw;
-`;
-
-const Wrap = styled.div`
-  margin-top: 2vh;
-  padding: 2vw;
-  img {
-    width: 100%;
+  width: 90vw;
+  margin-top: 20px;
+  & > button {
+    opacity: 0;
+    height: 100%;
+    width: 5vw;
+    z-index: 1;
+    &:hover {
+      opacity: 1;
+      transition: opacity 0.2s ease 0s;
+    }
+  }
+  ul li button {
+    &:before {
+      font-size: 10px;
+      color: rgb(150, 158, 171);
+    }
   }
   li.slick-active button:before {
     color: white;
   }
-  ul {
+  .slick-list {
     overflow: visible;
+  }
+  .slick-prev {
+    left: -75px;
+  }
+  .slick-next {
+    right: -75px;
+  }
+`;
+
+const Wrap = styled.div`
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  a {
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+      rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    padding: 4px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    &:hover {
+      padding: 0;
+      border: 4px solid rgba(249, 249, 249, 0.8);
+      transition-duration: 300ms;
+    }
   }
 `;

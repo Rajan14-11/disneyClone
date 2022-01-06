@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ImageSlider from "./ImageSlider";
+import Recommended from "./Recommended";
 import Viewers from "./Viewers";
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Container>
         <ImageSlider />
         <Viewers />
+        <Recommended />
       </Container>
     </div>
   );
@@ -16,9 +18,12 @@ function Home() {
 export default Home;
 
 const Container = styled.div`
-  height: 90vh;
-  width: 100vw;
+  border-color: rgba(249, 249, 249, 0.8);
   position: relative;
+  overflow-x: hidden;
+  display: block;
+  top: 40px;
+  padding: 0 calc(3.5vw + 5px);
 
   &:before {
     position: absolute;

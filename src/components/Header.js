@@ -48,7 +48,6 @@ function Header() {
 export default Header;
 
 const Container = styled.header`
-  width: 100vw;
   height: 10vh;
   background: url("/images/home-background.png");
   color: white;
@@ -120,9 +119,9 @@ const HeaderMenu = styled.div`
     }
   }
 
-  // @media (max-width: 760px) {
-  //   display: none;
-  // }
+  @media (max-width: 760px) {
+    display: none;
+  }
 `;
 
 const LoginButton = styled.button`
